@@ -3,7 +3,7 @@
   "name": "default",
   "template": "form",
   "method": "POST",
-  "model_class": "\\module\\venuesync\\model\\venues",
+  "model_class": "\\module\\venuesync\\model\\resource_types",
   "children": [
     {
       "helper": "\\kernel\\form",
@@ -45,46 +45,22 @@
       "mw": false,
       "children": [
         {
-          "tab_panel": "Venue Information",
+          "tab_panel": "Resource Type Information",
           "block": "Basic Information",
           "colspan": "3",
-          "name": ["venues", "name"],
-          "label": "Name",
-          "method": "input",
+          "name": ["resource_types", "type_name"],
+          "label": "Type Name",
+          "method": "varchar",
           "helper": "\\kernel\\form",
-          "template": "input",
+          "template": "varchar",
           "packaged_with_module": "venuesync",
           "mw": false
         },
         {
-          "tab_panel": "Venue Information",
+          "tab_panel": "Resource Type Information",
           "block": "Basic Information",
           "colspan": "3",
-          "name": ["venues", "address"],
-          "label": "Address",
-          "method": "input",
-          "helper": "\\kernel\\form",
-          "template": "input",
-          "packaged_with_module": "venuesync",
-          "mw": false
-        },
-        {
-          "tab_panel": "Venue Information",
-          "block": "Basic Information",
-          "colspan": "3",
-          "name": ["venues", "capacity"],
-          "label": "Capacity",
-          "method": "int",
-          "helper": "\\kernel\\form",
-          "template": "int",
-          "packaged_with_module": "venuesync",
-          "mw": false
-        },
-        {
-          "tab_panel": "Venue Information",
-          "block": "Basic Information",
-          "colspan": "3",
-          "name": ["venues", "description"],
+          "name": ["resource_types", "description"],
           "label": "Description",
           "method": "varchar",
           "helper": "\\kernel\\form",
@@ -106,7 +82,7 @@
         {
           "method": "collection",
           "helper": "\\kernel\\form",
-          "label": "Venue Information",
+          "label": "Resource Type Information",
           "template": "collection",
           "packaged_with_module": "venuesync",
           "mw": false,
@@ -120,9 +96,9 @@
               "mw": false,
               "children": [
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "created"],
+                  "name": ["resource_types", "created"],
                   "label": "created",
                   "permission": 4,
                   "method": "datetime",
@@ -132,9 +108,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "created_by"],
+                  "name": ["resource_types", "created_by"],
                   "label": "created_by",
                   "permission": 4,
                   "method": "int",
@@ -144,9 +120,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "modified"],
+                  "name": ["resource_types", "modified"],
                   "label": "modified",
                   "permission": 4,
                   "method": "datetime",
@@ -156,9 +132,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "modified_by"],
+                  "name": ["resource_types", "modified_by"],
                   "label": "modified_by",
                   "permission": 4,
                   "method": "int",
@@ -168,9 +144,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "deleted"],
+                  "name": ["resource_types", "deleted"],
                   "label": "deleted",
                   "permission": 4,
                   "method": "tinyint",
@@ -180,9 +156,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "revision"],
+                  "name": ["resource_types", "revision"],
                   "label": "revision",
                   "permission": 4,
                   "method": "int",
@@ -192,9 +168,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "flags"],
+                  "name": ["resource_types", "flags"],
                   "label": "flags",
                   "permission": 4,
                   "method": "int",
@@ -204,9 +180,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "owned_by"],
+                  "name": ["resource_types", "owned_by"],
                   "label": "owned_by",
                   "permission": 4,
                   "method": "int",
@@ -216,9 +192,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "_acl"],
+                  "name": ["resource_types", "_acl"],
                   "label": "_acl",
                   "permission": 4,
                   "method": "varchar",
@@ -228,9 +204,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "_acl_delete"],
+                  "name": ["resource_types", "_acl_delete"],
                   "label": "_acl_delete",
                   "permission": 4,
                   "method": "varchar",
@@ -240,9 +216,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "_acl_edit"],
+                  "name": ["resource_types", "_acl_edit"],
                   "label": "_acl_edit",
                   "permission": 4,
                   "method": "varchar",
@@ -252,9 +228,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "_acl_tmp"],
+                  "name": ["resource_types", "_acl_tmp"],
                   "label": "_acl_tmp",
                   "permission": 4,
                   "method": "varchar",
@@ -264,9 +240,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "_acl_tmp_delete"],
+                  "name": ["resource_types", "_acl_tmp_delete"],
                   "label": "_acl_tmp_delete",
                   "permission": 4,
                   "method": "varchar",
@@ -276,9 +252,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "_acl_tmp_edit"],
+                  "name": ["resource_types", "_acl_tmp_edit"],
                   "label": "_acl_tmp_edit",
                   "permission": 4,
                   "method": "varchar",
@@ -288,9 +264,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "primary_acl_group"],
+                  "name": ["resource_types", "primary_acl_group"],
                   "label": "primary_acl_group",
                   "permission": 4,
                   "method": "int",
@@ -300,9 +276,9 @@
                   "mw": false
                 },
                 {
-                  "tab_panel": "Venue Information",
+                  "tab_panel": "Resource Type Information",
                   "block": "Document Information",
-                  "name": ["venues", "_acl_comment"],
+                  "name": ["resource_types", "_acl_comment"],
                   "label": "_acl_comment",
                   "permission": 4,
                   "method": "varchar",
@@ -357,8 +333,8 @@
     }
   ],
   "enable_split_layout": 0,
-  "form_metadata_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-  "form_view_href": "/venuesync/venues/view/id:a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "form_metadata_id": "7890abcd-ef12-3456-7890-abcdef123456",
+  "form_view_href": "/venuesync/resource_types/view/id:7890abcd-ef12-3456-7890-abcdef123456",
   "field_configurations": [],
   "field_request_status": "",
   "field_request_message": "",
