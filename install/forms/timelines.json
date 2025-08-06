@@ -1,0 +1,280 @@
+{
+  "enctype": "multipart/form-data",
+  "name": "default",
+  "template": "form",
+  "method": "POST",
+  "model_class": "\\module\\venuesync\\model\\timelines",
+  "children": [
+    {
+      "helper": "\\kernel\\form",
+      "method": "panel",
+      "class": "align-center",
+      "name": ["Action Bar"],
+      "template": "panel",
+      "packaged_with_module": "venuesync",
+      "children": [
+        {
+          "helper": "\\kernel\\form",
+          "method": "cancel",
+          "name": ["action", "cancel"],
+          "template": "cancel",
+          "packaged_with_module": "venuesync"
+        },
+        {
+          "helper": "\\kernel\\form",
+          "method": "submit",
+          "label": "Submit",
+          "name": ["action", "submit"],
+          "template": "submit",
+          "packaged_with_module": "venuesync",
+          "mw": false
+        }
+      ]
+    },
+    {
+      "helper": "\\kernel\\form",
+      "method": "block",
+      "label": "Basic Information",
+      "compute_field_sequence": "1",
+      "empty": "1",
+      "show_collapsed": "0",
+      "not_empty": "0",
+      "open_on_focus": "0",
+      "template": "block",
+      "packaged_with_module": "venuesync",
+      "mw": false,
+      "children": [
+        {
+          "tab_panel": "Timeline Information",
+          "block": "Basic Information",
+          "colspan": "3",
+          "name": ["timelines", "booking_id"],
+          "label": "Booking",
+          "method": "select",
+          "helper": "\\kernel\\form",
+          "template": "select",
+          "packaged_with_module": "venuesync",
+          "mw": false
+        },
+        {
+          "tab_panel": "Timeline Information",
+          "block": "Basic Information",
+          "colspan": "3",
+          "name": ["timelines", "activity"],
+          "label": "Activity",
+          "method": "input",
+          "helper": "\\kernel\\form",
+          "template": "input",
+          "packaged_with_module": "venuesync",
+          "mw": false
+        },
+        {
+          "tab_panel": "Timeline Information",
+          "block": "Basic Information",
+          "colspan": "3",
+          "name": ["timelines", "start_time"],
+          "label": "Start Time",
+          "method": "datetime",
+          "helper": "\\kernel\\form",
+          "template": "datetime",
+          "packaged_with_module": "venuesync",
+          "mw": false
+        },
+        {
+          "tab_panel": "Timeline Information",
+          "block": "Basic Information",
+          "colspan": "3",
+          "name": ["timelines", "end_time"],
+          "label": "End Time",
+          "method": "datetime",
+          "helper": "\\kernel\\form",
+          "template": "datetime",
+          "packaged_with_module": "venuesync",
+          "mw": false
+        },
+        {
+          "tab_panel": "Timeline Information",
+          "block": "Basic Information",
+          "colspan": "3",
+          "name": ["timelines", "assigned_to"],
+          "label": "Assigned To",
+          "method": "select",
+          "helper": "\\kernel\\form",
+          "template": "select",
+          "packaged_with_module": "venuesync",
+          "mw": false
+        },
+        {
+          "tab_panel": "Timeline Information",
+          "block": "Basic Information",
+          "colspan": "3",
+          "name": ["timelines", "notes"],
+          "label": "Notes",
+          "method": "textarea",
+          "helper": "\\kernel\\form",
+          "template": "textarea",
+          "packaged_with_module": "venuesync",
+          "mw": false
+        }
+      ]
+    },
+    {
+      "name": ["Tab"],
+      "is_web_compatible": "1",
+      "helper": "\\kernel\\form",
+      "method": "tab",
+      "is_mobile_compatible": "0",
+      "template": "tab",
+      "packaged_with_module": "venuesync",
+      "children": [
+        {
+          "method": "collection",
+          "helper": "\\kernel\\form",
+          "label": "Timeline Information",
+          "template": "collection",
+          "packaged_with_module": "venuesync",
+          "mw": false,
+          "children": [
+            {
+              "method": "block",
+              "helper": "\\kernel\\form",
+              "label": "Document Information",
+              "template": "block",
+              "packaged_with_module": "venuesync",
+              "mw": false,
+              "children": [
+                {
+                  "tab_panel": "Timeline Information",
+                  "block": "Document Information",
+                  "name": ["timelines", "created"],
+                  "label": "Created",
+                  "permission": 4,
+                  "method": "datetime",
+                  "helper": "\\kernel\\form",
+                  "template": "datetime",
+                  "packaged_with_module": "venuesync",
+                  "mw": false
+                },
+                {
+                  "tab_panel": "Timeline Information",
+                  "block": "Document Information",
+                  "name": ["timelines", "modified"],
+                  "label": "Modified",
+                  "permission": 4,
+                  "method": "datetime",
+                  "helper": "\\kernel\\form",
+                  "template": "datetime",
+                  "packaged_with_module": "venuesync",
+                  "mw": false
+                },
+                {
+                  "tab_panel": "Timeline Information",
+                  "block": "Document Information",
+                  "name": ["timelines", "deleted"],
+                  "label": "Deleted",
+                  "permission": 4,
+                  "method": "number",
+                  "helper": "\\kernel\\form",
+                  "template": "number",
+                  "packaged_with_module": "venuesync",
+                  "mw": false
+                },
+                {
+                  "tab_panel": "Timeline Information",
+                  "block": "Document Information",
+                  "name": ["timelines", "revision"],
+                  "label": "Revision",
+                  "permission": 4,
+                  "method": "number",
+                  "helper": "\\kernel\\form",
+                  "template": "number",
+                  "packaged_with_module": "venuesync",
+                  "mw": false
+                },
+                {
+                  "tab_panel": "Timeline Information",
+                  "block": "Document Information",
+                  "name": ["timelines", "flags"],
+                  "label": "Flags",
+                  "permission": 4,
+                  "method": "number",
+                  "helper": "\\kernel\\form",
+                  "template": "number",
+                  "packaged_with_module": "venuesync",
+                  "mw": false
+                },
+                {
+                  "tab_panel": "Timeline Information",
+                  "block": "Document Information",
+                  "name": ["timelines", "owned_by"],
+                  "label": "Owned By",
+                  "permission": 4,
+                  "method": "popup",
+                  "helper": "\\kernel\\form",
+                  "template": "popup",
+                  "packaged_with_module": "venuesync",
+                  "mw": false,
+                  "children": [
+                    {
+                      "helper": "\\kernel\\form",
+                      "method": "popupoption",
+                      "href": "access_controls/users/index",
+                      "model": "owned_by_user",
+                      "template": "popupoption",
+                      "packaged_with_module": "venuesync"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "helper": "\\kernel\\form",
+          "method": "subform",
+          "label": "Permissions",
+          "sub_form_model_class": "\\module\\core\\model\\listviews",
+          "sub_form_name": "SYSTEM_ACL_REVISIONS",
+          "overwrite_sub_form_model": "1",
+          "show_collapsed": "0",
+          "not_empty": "0",
+          "name": ["ACL & Revisions"],
+          "template": "subform",
+          "packaged_with_module": "venuesync",
+          "mw": false
+        },
+        {
+          "name": ["Logs"],
+          "label": "Logs",
+          "sub_form_model_class": "\\module\\core\\model\\listviews",
+          "sub_form_name": "SYSTEM_LOGS",
+          "description": "Visible only to Admin role",
+          "permission": "1",
+          "is_web_compatible": "1",
+          "rules": [
+            {
+              "if_condition": "\\kernel\\user::read('is_admin', false) == true",
+              "permission": "0"
+            }
+          ],
+          "helper": "\\kernel\\form",
+          "method": "subform",
+          "overwrite_sub_form_model": "0",
+          "is_mobile_compatible": "0",
+          "show_collapsed": "0",
+          "not_empty": "0",
+          "template": "subform",
+          "packaged_with_module": "venuesync",
+          "mw": false
+        }
+      ]
+    }
+  ],
+  "enable_split_layout": 0,
+  "form_metadata_id": "890abcde-1234-5678-90ab-cdef12345678",
+  "form_view_href": "/venuesync/timelines/view/id:890abcde-1234-5678-90ab-cdef12345678",
+  "field_configurations": [],
+  "field_request_status": "",
+  "field_request_message": "",
+  "permission": 2
+}
