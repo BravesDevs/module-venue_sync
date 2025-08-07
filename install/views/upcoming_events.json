@@ -1,0 +1,194 @@
+{
+  "id": "52611fb5-6ca8-4815-96d7-1d890acef1b9",
+  "name": "Upcoming Events",
+  "category_id": "5",
+  "controller": "venuesync/bookings",
+  "render_as": "index",
+  "description": "",
+  "limit": "",
+  "show_has_many_records": "one",
+  "ui_helper": "",
+  "parent_id": "",
+  "parent_id_model": "parent_listview",
+  "row_class": "",
+  "sequence": "3",
+  "row_template": "",
+  "module_id": "27260a2d-e746-11e3-aad5-0800275f9930",
+  "module_id_model": "modules",
+  "owned_by": 655,
+  "owned_by_model": "users",
+  "primary_acl_group": "",
+  "primary_acl_group_model": "groups",
+  "is_public": "1",
+  "fields": [
+    {
+      "seq": "1",
+      "field_type": "Data-Field",
+      "column": "bookings.id",
+      "__column": "bookings.id",
+      "alias": "",
+      "aggregator": "",
+      "style": "width:15%",
+      "class": "",
+      "sortable": "1",
+      "searchable": "1",
+      "presentation": "",
+      "is_invisible": "0",
+      "clickable_link": "0",
+      "compute_column_total": "0"
+    },
+    {
+      "seq": "2",
+      "field_type": "Data-Field",
+      "column": "bookings.space_id",
+      "__column": "bookings.space_id",
+      "alias": "",
+      "aggregator": "",
+      "style": "width:20%",
+      "class": "",
+      "sortable": "1",
+      "searchable": "1",
+      "presentation": "",
+      "is_invisible": "0",
+      "clickable_link": "0",
+      "compute_column_total": "0"
+    },
+    {
+      "seq": "3",
+      "field_type": "Data-Field",
+      "column": "bookings.client_id",
+      "column_model": "schema",
+      "__column": "bookings.client_id",
+      "alias": "",
+      "aggregator": "",
+      "style": "",
+      "class": "",
+      "sortable": "1",
+      "searchable": "1",
+      "presentation": "",
+      "is_invisible": "0",
+      "clickable_link": "0",
+      "compute_column_total": "0"
+    },
+    {
+      "seq": "4",
+      "field_type": "Data-Field",
+      "column": "bookings.start_datetime",
+      "column_model": "schema",
+      "__column": "bookings.start_datetime",
+      "alias": "",
+      "aggregator": "",
+      "style": "width:10%",
+      "class": "",
+      "sortable": "1",
+      "searchable": "1",
+      "presentation": "",
+      "is_invisible": "0",
+      "clickable_link": "0",
+      "compute_column_total": "0"
+    },
+    {
+      "seq": "5",
+      "field_type": "Data-Field",
+      "column": "bookings.end_datetime",
+      "column_model": "schema",
+      "__column": "bookings.end_datetime",
+      "alias": "",
+      "aggregator": "",
+      "style": "width:10%",
+      "class": "",
+      "sortable": "1",
+      "searchable": "1",
+      "presentation": "",
+      "is_invisible": "0",
+      "clickable_link": "0",
+      "compute_column_total": "0"
+    },
+    {
+      "seq": "6",
+      "field_type": "Data-Field",
+      "column": "bookings.config_booking_statuses.status",
+      "column_model": "schema",
+      "__column": "bookings.config_booking_statuses.status",
+      "alias": "",
+      "aggregator": "",
+      "style": "",
+      "class": "",
+      "sortable": "1",
+      "searchable": "1",
+      "presentation": "",
+      "is_invisible": "0",
+      "clickable_link": "0",
+      "compute_column_total": "0"
+    }
+  ],
+  "conditions": [
+    {
+      "search_column": "bookings.start_datetime",
+      "search_column_model": "schema",
+      "__search_column": "bookings.start_datetime",
+      "search_comparator": ">",
+      "search_value": "NOW()",
+      "logical_operator": ""
+    }
+  ],
+  "group_by": {
+    "1": {
+      "column": "",
+      "column_model": "schema",
+      "__column": ""
+    }
+  },
+  "sort": [
+    {
+      "sort_by": "bookings.start_datetime",
+      "sort_by_model": "schema",
+      "__sort_by": "bookings.start_datetime",
+      "sort_order": "ASC"
+    }
+  ],
+  "_acl": [
+    {
+      "aro_id": "-2",
+      "aro_id_model": "users",
+      "__aro_id": "Maax Modules Development Team",
+      "id": "-2"
+    },
+    {
+      "aro_id": "-1",
+      "aro_id_model": "users",
+      "__aro_id": "Maax Core Development Team",
+      "id": "-1"
+    }
+  ],
+  "_acl_edit": [
+    {
+      "aro_id": "-2",
+      "aro_id_model": "users",
+      "__aro_id": "Maax Modules Development Team",
+      "id": "-2",
+      "deleted": ""
+    },
+    {
+      "aro_id": "-1",
+      "aro_id_model": "users",
+      "__aro_id": "Maax Core Development Team",
+      "id": "-1",
+      "deleted": ""
+    }
+  ],
+  "_acl_delete": [
+    {
+      "aro_id": "-2",
+      "aro_id_model": "users",
+      "__aro_id": "Maax Modules Development Team",
+      "id": "-2"
+    },
+    {
+      "aro_id": "-1",
+      "aro_id_model": "users",
+      "__aro_id": "Maax Core Development Team",
+      "id": "-1"
+    }
+  ]
+}
