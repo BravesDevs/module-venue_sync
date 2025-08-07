@@ -3,7 +3,7 @@
   "name": "default",
   "template": "form",
   "method": "POST",
-  "model_class": "\\venuesync\\model\\config_vendor_types",
+  "model_class": "\\venuesync\\model\\inquiries",
   "children": [
     {
       "helper": "\\kernel\\form",
@@ -49,24 +49,51 @@
       "packaged_with_module": "venuesync",
       "children": [
         {
-          "tab_panel": "Basic Information",
-          "block": "Basic Information",
-          "colspan": "3",
-          "name": ["config_vendor_types", "vendor_type"],
-          "label": "Vendor Type",
-          "method": "input",
           "helper": "\\kernel\\form",
-          "template": "input",
+          "method": "popup",
+          "label": "Client",
+          "colspan": "3",
+          "name": ["inquiries", "client_id"],
+          "template": "popup",
+          "packaged_with_module": "venuesync"
+        },
+        {
+          "helper": "\\kernel\\form",
+          "method": "popup",
+          "label": "Space",
+          "colspan": "3",
+          "name": ["inquiries", "space_id"],
+          "template": "popup",
+          "packaged_with_module": "venuesync"
+        },
+        {
+          "helper": "\\kernel\\form",
+          "method": "date",
+          "label": "Inquiry Date",
+          "colspan": "3",
+          "empty": "1",
+          "name": ["inquiries", "inquiry_date"],
+          "template": "date",
           "packaged_with_module": "venuesync"
         },
         {
           "helper": "\\kernel\\form",
           "method": "input",
-          "label": "Description",
+          "label": "Status",
           "colspan": "3",
           "empty": "1",
-          "name": ["config_vendor_types", "description"],
+          "name": ["inquiries", "status"],
           "template": "input",
+          "packaged_with_module": "venuesync"
+        },
+        {
+          "helper": "\\kernel\\form",
+          "method": "textarea",
+          "label": "Notes",
+          "colspan": "3",
+          "empty": "1",
+          "name": ["inquiries", "notes"],
+          "template": "textarea",
           "packaged_with_module": "venuesync"
         }
       ]
@@ -97,7 +124,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "created"],
+                  "name": ["inquiries", "created"],
                   "label": "Created",
                   "permission": 4,
                   "method": "datetime",
@@ -108,7 +135,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "modified"],
+                  "name": ["inquiries", "modified"],
                   "label": "Modified",
                   "permission": 4,
                   "method": "datetime",
@@ -119,7 +146,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "deleted"],
+                  "name": ["inquiries", "deleted"],
                   "label": "Deleted",
                   "permission": 4,
                   "method": "number",
@@ -130,7 +157,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "revision"],
+                  "name": ["inquiries", "revision"],
                   "label": "Revision",
                   "permission": 4,
                   "method": "number",
@@ -141,7 +168,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "flags"],
+                  "name": ["inquiries", "flags"],
                   "label": "Flags",
                   "permission": 4,
                   "method": "number",
@@ -152,7 +179,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "owned_by"],
+                  "name": ["inquiries", "owned_by"],
                   "label": "Owned By",
                   "permission": 4,
                   "method": "popup",
@@ -213,8 +240,8 @@
     }
   ],
   "enable_split_layout": 0,
-  "form_metadata_id": "venuesync-config_vendor_types-basic",
-  "form_view_href": "/venuesync/config_vendor_types/view/id:venuesync-config_vendor_types-basic",
+  "form_metadata_id": "venuesync-inquiries-basic",
+  "form_view_href": "/venuesync/inquiries/view/id:venuesync-inquiries-basic",
   "field_configurations": [],
   "field_request_status": "",
   "field_request_message": "",

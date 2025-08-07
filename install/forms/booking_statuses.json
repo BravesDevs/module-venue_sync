@@ -3,7 +3,7 @@
   "name": "default",
   "template": "form",
   "method": "POST",
-  "model_class": "\\module\\venuesync\\model\\booking_statuses",
+  "model_class": "\\venuesync\\model\\config_booking_statuses",
   "children": [
     {
       "helper": "\\kernel\\form",
@@ -22,12 +22,17 @@
         },
         {
           "helper": "\\kernel\\form",
+          "method": "menu",
+          "template": "menu",
+          "packaged_with_module": "venuesync"
+        },
+        {
+          "helper": "\\kernel\\form",
           "method": "submit",
           "label": "Submit",
           "name": ["action", "submit"],
           "template": "submit",
-          "packaged_with_module": "venuesync",
-          "mw": false
+          "packaged_with_module": "venuesync"
         }
       ]
     },
@@ -42,31 +47,27 @@
       "open_on_focus": "0",
       "template": "block",
       "packaged_with_module": "venuesync",
-      "mw": false,
       "children": [
         {
-          "tab_panel": "Booking Status Information",
+          "tab_panel": "Basic Information",
           "block": "Basic Information",
           "colspan": "3",
-          "name": ["booking_statuses", "status_name"],
-          "label": "Status Name",
-          "method": "varchar",
+          "name": ["config_booking_statuses", "status"],
+          "label": "Status",
+          "method": "input",
           "helper": "\\kernel\\form",
-          "template": "varchar",
-          "packaged_with_module": "venuesync",
-          "mw": false
+          "template": "input",
+          "packaged_with_module": "venuesync"
         },
         {
-          "tab_panel": "Booking Status Information",
-          "block": "Basic Information",
-          "colspan": "3",
-          "name": ["booking_statuses", "description"],
-          "label": "Description",
-          "method": "varchar",
           "helper": "\\kernel\\form",
-          "template": "varchar",
-          "packaged_with_module": "venuesync",
-          "mw": false
+          "method": "input",
+          "label": "Description",
+          "colspan": "3",
+          "empty": "1",
+          "name": ["config_booking_statuses", "description"],
+          "template": "input",
+          "packaged_with_module": "venuesync"
         }
       ]
     },
@@ -82,10 +83,9 @@
         {
           "method": "collection",
           "helper": "\\kernel\\form",
-          "label": "Booking Status Information",
+          "label": "Document Information",
           "template": "collection",
           "packaged_with_module": "venuesync",
-          "mw": false,
           "children": [
             {
               "method": "block",
@@ -93,199 +93,82 @@
               "label": "Document Information",
               "template": "block",
               "packaged_with_module": "venuesync",
-              "mw": false,
               "children": [
                 {
-                  "tab_panel": "Booking Status Information",
+                  "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["booking_statuses", "created"],
-                  "label": "created",
+                  "name": ["config_booking_statuses", "created"],
+                  "label": "Created",
                   "permission": 4,
                   "method": "datetime",
                   "helper": "\\kernel\\form",
                   "template": "datetime",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
+                  "packaged_with_module": "venuesync"
                 },
                 {
-                  "tab_panel": "Booking Status Information",
+                  "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["booking_statuses", "created_by"],
-                  "label": "created_by",
-                  "permission": 4,
-                  "method": "int",
-                  "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Booking Status Information",
-                  "block": "Document Information",
-                  "name": ["booking_statuses", "modified"],
-                  "label": "modified",
+                  "name": ["config_booking_statuses", "modified"],
+                  "label": "Modified",
                   "permission": 4,
                   "method": "datetime",
                   "helper": "\\kernel\\form",
                   "template": "datetime",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
+                  "packaged_with_module": "venuesync"
                 },
                 {
-                  "tab_panel": "Booking Status Information",
+                  "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["booking_statuses", "modified_by"],
-                  "label": "modified_by",
+                  "name": ["config_booking_statuses", "deleted"],
+                  "label": "Deleted",
                   "permission": 4,
-                  "method": "int",
+                  "method": "number",
                   "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
+                  "template": "number",
+                  "packaged_with_module": "venuesync"
                 },
                 {
-                  "tab_panel": "Booking Status Information",
+                  "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["booking_statuses", "deleted"],
-                  "label": "deleted",
+                  "name": ["config_booking_statuses", "revision"],
+                  "label": "Revision",
                   "permission": 4,
-                  "method": "tinyint",
+                  "method": "number",
                   "helper": "\\kernel\\form",
-                  "template": "tinyint",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
+                  "template": "number",
+                  "packaged_with_module": "venuesync"
                 },
                 {
-                  "tab_panel": "Booking Status Information",
+                  "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["booking_statuses", "revision"],
-                  "label": "revision",
+                  "name": ["config_booking_statuses", "flags"],
+                  "label": "Flags",
                   "permission": 4,
-                  "method": "int",
+                  "method": "number",
                   "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
+                  "template": "number",
+                  "packaged_with_module": "venuesync"
                 },
                 {
-                  "tab_panel": "Booking Status Information",
+                  "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["booking_statuses", "flags"],
-                  "label": "flags",
+                  "name": ["config_booking_statuses", "owned_by"],
+                  "label": "Owned By",
                   "permission": 4,
-                  "method": "int",
+                  "method": "popup",
                   "helper": "\\kernel\\form",
-                  "template": "int",
+                  "template": "popup",
                   "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Booking Status Information",
-                  "block": "Document Information",
-                  "name": ["booking_statuses", "owned_by"],
-                  "label": "owned_by",
-                  "permission": 4,
-                  "method": "int",
-                  "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Booking Status Information",
-                  "block": "Document Information",
-                  "name": ["booking_statuses", "_acl"],
-                  "label": "_acl",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Booking Status Information",
-                  "block": "Document Information",
-                  "name": ["booking_statuses", "_acl_delete"],
-                  "label": "_acl_delete",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Booking Status Information",
-                  "block": "Document Information",
-                  "name": ["booking_statuses", "_acl_edit"],
-                  "label": "_acl_edit",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Booking Status Information",
-                  "block": "Document Information",
-                  "name": ["booking_statuses", "_acl_tmp"],
-                  "label": "_acl_tmp",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Booking Status Information",
-                  "block": "Document Information",
-                  "name": ["booking_statuses", "_acl_tmp_delete"],
-                  "label": "_acl_tmp_delete",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Booking Status Information",
-                  "block": "Document Information",
-                  "name": ["booking_statuses", "_acl_tmp_edit"],
-                  "label": "_acl_tmp_edit",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Booking Status Information",
-                  "block": "Document Information",
-                  "name": ["booking_statuses", "primary_acl_group"],
-                  "label": "primary_acl_group",
-                  "permission": 4,
-                  "method": "int",
-                  "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Booking Status Information",
-                  "block": "Document Information",
-                  "name": ["booking_statuses", "_acl_comment"],
-                  "label": "_acl_comment",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
+                  "children": [
+                    {
+                      "helper": "\\kernel\\form",
+                      "method": "popupoption",
+                      "href": "access_controls/users/index",
+                      "model": "owned_by_user",
+                      "template": "popupoption",
+                      "packaged_with_module": "venuesync"
+                    }
+                  ]
                 }
               ]
             }
@@ -302,8 +185,7 @@
           "not_empty": "0",
           "name": ["ACL & Revisions"],
           "template": "subform",
-          "packaged_with_module": "venuesync",
-          "mw": false
+          "packaged_with_module": "venuesync"
         },
         {
           "name": ["Logs"],
@@ -324,17 +206,15 @@
           "overwrite_sub_form_model": "0",
           "is_mobile_compatible": "0",
           "show_collapsed": "0",
-          "not_empty": "0",
           "template": "subform",
-          "packaged_with_module": "venuesync",
-          "mw": false
+          "packaged_with_module": "venuesync"
         }
       ]
     }
   ],
   "enable_split_layout": 0,
-  "form_metadata_id": "d4e5f678-90ab-cdef-1234-567890abcdef",
-  "form_view_href": "/venuesync/booking_statuses/view/id:d4b5e678-90ab-cdef-1234-567890abcdef",
+  "form_metadata_id": "venuesync-config_booking_statuses-basic",
+  "form_view_href": "/venuesync/config_booking_statuses/view/id:venuesync-config_booking_statuses-basic",
   "field_configurations": [],
   "field_request_status": "",
   "field_request_message": "",

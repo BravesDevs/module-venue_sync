@@ -3,7 +3,7 @@
   "name": "default",
   "template": "form",
   "method": "POST",
-  "model_class": "\\venuesync\\model\\config_vendor_types",
+  "model_class": "\\venuesync\\model\\quotes",
   "children": [
     {
       "helper": "\\kernel\\form",
@@ -49,24 +49,41 @@
       "packaged_with_module": "venuesync",
       "children": [
         {
-          "tab_panel": "Basic Information",
-          "block": "Basic Information",
-          "colspan": "3",
-          "name": ["config_vendor_types", "vendor_type"],
-          "label": "Vendor Type",
-          "method": "input",
           "helper": "\\kernel\\form",
-          "template": "input",
+          "method": "popup",
+          "label": "Booking",
+          "colspan": "3",
+          "name": ["quotes", "booking_id"],
+          "template": "popup",
+          "packaged_with_module": "venuesync"
+        },
+        {
+          "helper": "\\kernel\\form",
+          "method": "decimal",
+          "label": "Amount",
+          "colspan": "3",
+          "name": ["quotes", "amount"],
+          "template": "decimal",
           "packaged_with_module": "venuesync"
         },
         {
           "helper": "\\kernel\\form",
           "method": "input",
-          "label": "Description",
+          "label": "Status",
           "colspan": "3",
           "empty": "1",
-          "name": ["config_vendor_types", "description"],
+          "name": ["quotes", "status"],
           "template": "input",
+          "packaged_with_module": "venuesync"
+        },
+        {
+          "helper": "\\kernel\\form",
+          "method": "date",
+          "label": "Quote Date",
+          "colspan": "3",
+          "empty": "1",
+          "name": ["quotes", "quote_date"],
+          "template": "date",
           "packaged_with_module": "venuesync"
         }
       ]
@@ -97,7 +114,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "created"],
+                  "name": ["quotes", "created"],
                   "label": "Created",
                   "permission": 4,
                   "method": "datetime",
@@ -108,7 +125,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "modified"],
+                  "name": ["quotes", "modified"],
                   "label": "Modified",
                   "permission": 4,
                   "method": "datetime",
@@ -119,7 +136,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "deleted"],
+                  "name": ["quotes", "deleted"],
                   "label": "Deleted",
                   "permission": 4,
                   "method": "number",
@@ -130,7 +147,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "revision"],
+                  "name": ["quotes", "revision"],
                   "label": "Revision",
                   "permission": 4,
                   "method": "number",
@@ -141,7 +158,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "flags"],
+                  "name": ["quotes", "flags"],
                   "label": "Flags",
                   "permission": 4,
                   "method": "number",
@@ -152,7 +169,7 @@
                 {
                   "tab_panel": "Document Information",
                   "block": "Document Information",
-                  "name": ["config_vendor_types", "owned_by"],
+                  "name": ["quotes", "owned_by"],
                   "label": "Owned By",
                   "permission": 4,
                   "method": "popup",
@@ -213,8 +230,8 @@
     }
   ],
   "enable_split_layout": 0,
-  "form_metadata_id": "venuesync-config_vendor_types-basic",
-  "form_view_href": "/venuesync/config_vendor_types/view/id:venuesync-config_vendor_types-basic",
+  "form_metadata_id": "venuesync-quotes-basic",
+  "form_view_href": "/venuesync/quotes/view/id:venuesync-quotes-basic",
   "field_configurations": [],
   "field_request_status": "",
   "field_request_message": "",
