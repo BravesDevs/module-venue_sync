@@ -3,7 +3,7 @@
   "name": "default",
   "template": "form",
   "method": "POST",
-  "model_class": "\\module\\venuesync\\model\\config_event_types",
+  "model_class": "\\module\\venuesync\\model\\booking_vendors",
   "children": [
     {
       "helper": "\\kernel\\form",
@@ -45,19 +45,26 @@
       "children": [
         {
           "colspan": "3",
-          "name": ["config_event_types", "event_type"],
-          "label": "event_type",
+          "name": ["booking_vendors", "booking_id"],
+          "label": "booking_id",
           "method": "input",
           "helper": "\\kernel\\form",
           "template": "input"
         },
         {
-          "helper": "\\kernel\\form",
-          "method": "input",
-          "label": "seq",
           "colspan": "3",
-          "empty": "1",
-          "name": ["config_event_types", "seq"],
+          "name": ["booking_vendors", "vendor_id"],
+          "label": "vendor_id",
+          "method": "input",
+          "helper": "\\kernel\\form",
+          "template": "input"
+        },
+        {
+          "colspan": "3",
+          "name": ["booking_vendors", "notes"],
+          "label": "notes",
+          "method": "input",
+          "helper": "\\kernel\\form",
           "template": "input"
         }
       ]

@@ -3,7 +3,7 @@
   "name": "default",
   "template": "form",
   "method": "POST",
-  "model_class": "\\module\\venuesync\\model\\resource_types",
+  "model_class": "\\module\\venuesync\\model\\config_resource_types",
   "children": [
     {
       "helper": "\\kernel\\form",
@@ -11,23 +11,24 @@
       "class": "align-center",
       "name": ["Action Bar"],
       "template": "panel",
-      "packaged_with_module": "venuesync",
       "children": [
         {
           "helper": "\\kernel\\form",
           "method": "cancel",
           "name": ["action", "cancel"],
-          "template": "cancel",
-          "packaged_with_module": "venuesync"
+          "template": "cancel"
+        },
+        {
+          "helper": "\\kernel\\form",
+          "method": "menu",
+          "template": "menu"
         },
         {
           "helper": "\\kernel\\form",
           "method": "submit",
           "label": "Submit",
           "name": ["action", "submit"],
-          "template": "submit",
-          "packaged_with_module": "venuesync",
-          "mw": false
+          "template": "submit"
         }
       ]
     },
@@ -41,256 +42,32 @@
       "not_empty": "0",
       "open_on_focus": "0",
       "template": "block",
-      "packaged_with_module": "venuesync",
-      "mw": false,
       "children": [
         {
-          "tab_panel": "Resource Type Information",
-          "block": "Basic Information",
           "colspan": "3",
-          "name": ["resource_types", "type_name"],
-          "label": "Type Name",
-          "method": "varchar",
+          "name": ["config_resource_types", "resource_type"],
+          "label": "resource_type",
+          "method": "input",
           "helper": "\\kernel\\form",
-          "template": "varchar",
-          "packaged_with_module": "venuesync",
-          "mw": false
+          "template": "input"
         },
         {
-          "tab_panel": "Resource Type Information",
-          "block": "Basic Information",
-          "colspan": "3",
-          "name": ["resource_types", "description"],
-          "label": "Description",
-          "method": "varchar",
           "helper": "\\kernel\\form",
-          "template": "varchar",
-          "packaged_with_module": "venuesync",
-          "mw": false
+          "method": "input",
+          "label": "seq",
+          "colspan": "3",
+          "empty": "1",
+          "name": ["config_resource_types", "seq"],
+          "template": "input"
         }
       ]
     },
     {
       "name": ["Tab"],
-      "is_web_compatible": "1",
       "helper": "\\kernel\\form",
       "method": "tab",
-      "is_mobile_compatible": "0",
       "template": "tab",
-      "packaged_with_module": "venuesync",
       "children": [
-        {
-          "method": "collection",
-          "helper": "\\kernel\\form",
-          "label": "Resource Type Information",
-          "template": "collection",
-          "packaged_with_module": "venuesync",
-          "mw": false,
-          "children": [
-            {
-              "method": "block",
-              "helper": "\\kernel\\form",
-              "label": "Document Information",
-              "template": "block",
-              "packaged_with_module": "venuesync",
-              "mw": false,
-              "children": [
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "created"],
-                  "label": "created",
-                  "permission": 4,
-                  "method": "datetime",
-                  "helper": "\\kernel\\form",
-                  "template": "datetime",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "created_by"],
-                  "label": "created_by",
-                  "permission": 4,
-                  "method": "int",
-                  "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "modified"],
-                  "label": "modified",
-                  "permission": 4,
-                  "method": "datetime",
-                  "helper": "\\kernel\\form",
-                  "template": "datetime",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "modified_by"],
-                  "label": "modified_by",
-                  "permission": 4,
-                  "method": "int",
-                  "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "deleted"],
-                  "label": "deleted",
-                  "permission": 4,
-                  "method": "tinyint",
-                  "helper": "\\kernel\\form",
-                  "template": "tinyint",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "revision"],
-                  "label": "revision",
-                  "permission": 4,
-                  "method": "int",
-                  "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "flags"],
-                  "label": "flags",
-                  "permission": 4,
-                  "method": "int",
-                  "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "owned_by"],
-                  "label": "owned_by",
-                  "permission": 4,
-                  "method": "int",
-                  "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "_acl"],
-                  "label": "_acl",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "_acl_delete"],
-                  "label": "_acl_delete",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "_acl_edit"],
-                  "label": "_acl_edit",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "_acl_tmp"],
-                  "label": "_acl_tmp",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "_acl_tmp_delete"],
-                  "label": "_acl_tmp_delete",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "_acl_tmp_edit"],
-                  "label": "_acl_tmp_edit",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "primary_acl_group"],
-                  "label": "primary_acl_group",
-                  "permission": 4,
-                  "method": "int",
-                  "helper": "\\kernel\\form",
-                  "template": "int",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                },
-                {
-                  "tab_panel": "Resource Type Information",
-                  "block": "Document Information",
-                  "name": ["resource_types", "_acl_comment"],
-                  "label": "_acl_comment",
-                  "permission": 4,
-                  "method": "varchar",
-                  "helper": "\\kernel\\form",
-                  "template": "varchar",
-                  "packaged_with_module": "venuesync",
-                  "mw": false
-                }
-              ]
-            }
-          ]
-        },
         {
           "helper": "\\kernel\\form",
           "method": "subform",
@@ -301,9 +78,7 @@
           "show_collapsed": "0",
           "not_empty": "0",
           "name": ["ACL & Revisions"],
-          "template": "subform",
-          "packaged_with_module": "venuesync",
-          "mw": false
+          "template": "subform"
         },
         {
           "name": ["Logs"],
@@ -311,32 +86,13 @@
           "sub_form_model_class": "\\module\\core\\model\\listviews",
           "sub_form_name": "SYSTEM_LOGS",
           "description": "Visible only to Admin role",
-          "permission": "1",
-          "is_web_compatible": "1",
-          "rules": [
-            {
-              "if_condition": "\\kernel\\user::read('is_admin', false) == true",
-              "permission": "0"
-            }
-          ],
           "helper": "\\kernel\\form",
           "method": "subform",
           "overwrite_sub_form_model": "0",
-          "is_mobile_compatible": "0",
           "show_collapsed": "0",
-          "not_empty": "0",
-          "template": "subform",
-          "packaged_with_module": "venuesync",
-          "mw": false
+          "template": "subform"
         }
       ]
     }
-  ],
-  "enable_split_layout": 0,
-  "form_metadata_id": "7890abcd-ef12-3456-7890-abcdef123456",
-  "form_view_href": "/venuesync/resource_types/view/id:7890abcd-ef12-3456-7890-abcdef123456",
-  "field_configurations": [],
-  "field_request_status": "",
-  "field_request_message": "",
-  "permission": 2
+  ]
 }
