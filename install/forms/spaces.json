@@ -63,7 +63,7 @@
           "is_web_compatible": "1",
           "is_mobile_compatible": "1",
           "helper": "\\module\\flexflow\\helper\\form_view\\flexflow",
-          "method": "menu",
+          "method": "flexflow_actions",
           "allow_copy_to_clipboard": "0",
           "business_key": "64468125-b204-4782-83bd-4cf9ac69033c",
           "template": "menu",
@@ -77,9 +77,9 @@
       "is_web_compatible": "1",
       "is_mobile_compatible": "1",
       "helper": "\\kernel\\form",
-      "method": "block",
+      "method": "horizontal_block",
       "show_collapsed": "0",
-      "template": "block",
+      "template": "panel",
       "packaged_with_module": "venuesync",
       "children": [
         {
@@ -108,6 +108,7 @@
               "allow_copy_to_clipboard": "0",
               "disable_autofill_while_cloning": "0",
               "allow_user_to_specify_user_level_default": "0",
+              "business_key": "67853c57-fffc-4d30-ab87-4817ac69033c",
               "template": "input",
               "packaged_with_module": "venuesync"
             },
@@ -121,12 +122,13 @@
               "rules_grid": "1",
               "roles_grid": "1",
               "helper": "\\kernel\\form",
-              "method": "input",
+              "method": "number",
               "show_model": "0",
               "allow_copy_to_clipboard": "0",
               "disable_autofill_while_cloning": "0",
               "allow_user_to_specify_user_level_default": "0",
-              "template": "input",
+              "business_key": "6675e27c-9ab0-445f-b0ac-4707ac69033c",
+              "template": "number",
               "packaged_with_module": "venuesync"
             },
             {
@@ -144,6 +146,7 @@
               "allow_copy_to_clipboard": "0",
               "disable_autofill_while_cloning": "0",
               "allow_user_to_specify_user_level_default": "0",
+              "business_key": "67853c57-fffc-4d30-ab87-4817ac69033c",
               "template": "input",
               "packaged_with_module": "venuesync"
             },
@@ -157,12 +160,13 @@
               "rules_grid": "1",
               "roles_grid": "1",
               "helper": "\\kernel\\form",
-              "method": "input",
+              "method": "textarea",
               "show_model": "0",
               "allow_copy_to_clipboard": "0",
               "disable_autofill_while_cloning": "0",
               "allow_user_to_specify_user_level_default": "0",
-              "template": "input",
+              "business_key": "6675e27c-9ab0-445f-b0ac-4707ac69033c",
+              "template": "textarea",
               "packaged_with_module": "venuesync"
             }
           ]
@@ -179,6 +183,7 @@
       "show_collapsed": "0",
       "not_empty": "0",
       "name": ["ACL & Revisions"],
+      "sub_form_id": "52611ec1-10f0-460e-b0f1-1d890acef1b9",
       "template": "subform",
       "packaged_with_module": "venuesync"
     },
@@ -193,11 +198,13 @@
       "roles_grid": "1",
       "helper": "\\kernel\\form",
       "method": "subform",
+      "sub_form_id": "527189ba-cb90-430b-b23d-2ab70aec906d",
       "overwrite_sub_form_model": "0",
       "is_mobile_compatible": "0",
       "show_collapsed": "0",
       "allow_copy_to_clipboard": "0",
       "allow_user_to_specify_user_level_default": "0",
+      "business_key": "66b678d1-e190-4913-a408-4e29ac69033c",
       "template": "subform",
       "packaged_with_module": "venuesync"
     }
